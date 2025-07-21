@@ -48,3 +48,11 @@ round(100.0*sum(case when Churn = 1 then 1 else 0 end)/ count(*), 2) as churn_pe
 from Churn
 group by [Contract]
 order by churn_percentage desc;
+
+ Select
+[Dependent],
+count(*) as count_contract,
+round(100.0*sum(case when Churn = 1 then 1 else 0 end)/ count(*), 2) as churn_percentage
+from Churn
+group by [Dependent]
+order by churn_percentage desc;
